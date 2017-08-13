@@ -26,7 +26,7 @@ this is the content for my article. this is the content for my article
 
 'article_three': { title:  'Article three | kartik rao',
 	heading: 'Article three',
-	date: 'Aug 3, 2017',
+	date: 'Aug 23, 2017',
 	content: `<p>
  this is the content for my third article
  </p>`
