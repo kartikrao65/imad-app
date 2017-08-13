@@ -39,7 +39,7 @@ article_two: {title:  'Article two| kartik rao',
 	date: 'Aug 3, 2017' ,
 	content: `<p>
  this is the content for my second article
- </p>
+ </p>`
 },
 
 article_three: { title:  'Article three | kartik rao',
@@ -47,7 +47,7 @@ article_three: { title:  'Article three | kartik rao',
 	date: 'Aug 23, 2017',
 	content: `<p>
  this is the content for my third article
- </p>
+ </p>`
 },
 };
 
