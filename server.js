@@ -56,6 +56,25 @@ var articles = {
  };
  
 
+function createtemplate(data){
+    var title= data.title;
+    var content= data.content;
+
+ var htmltemplate=
+`<html>
+ ${title};
+<body>
+    <div>
+      <a href='/'>Home</a>
+    </div>
+<h1 align="center"> Personal Information</h1>
+<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
+${content};
+</body>
+</html>`
+
+;return htmltemplate;}
+
 
 
 
