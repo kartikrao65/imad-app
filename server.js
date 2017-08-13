@@ -28,27 +28,18 @@ var articles = {
  
   article_two: {
      <html>
-<title>Chemical Engineering</title>
+    <title>article_one</title>
 <body>
-    <meta name="viewport" content="width=device-width, initial scale=1"/>
-     <link href="/ui/style.css" rel="stylesheet" />
-     
-    <div class="container">
     <div>
-        <a href="/">Freak</a>
-        <a href="/ui/madi.png">Logo</a>
+        <a href='/'>Home</a>
     </div>
-<h1 align="center"> Chemical Engineering Subjects</h1>
-
-<ul>
-<li>CPC</li>
-<li>HT</li>
-<li>MTO</li>
-<li>CET</li>
-<li>MUO</li>
-<h1>Chem engg life got hecked up</h1>
-</ul>
-</div>
+<h1 align="center"> Personal Information</h1>
+<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
+<ol>
+<li> 1st year 76%</li>
+<li>2nd year 72%</li> 
+<li>3d year 66%</li>
+</ol>
 </body>
 </html>
  }
