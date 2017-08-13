@@ -42,13 +42,12 @@ article_two: {title:  'Article two| kartik rao',
  </p>
 },
 
-article_three: {
-	title:  'Article three | kartik rao
-	heading: 'Article three'
+article_three: { title:  'Article three | kartik rao',
+	heading: 'Article three',
 	date: 'Aug 23, 2017',
 	content: `<p>
  this is the content for my third article
- </p>},
+ </p>`
 },
 };
 
