@@ -14,25 +14,7 @@ var articles = {
  this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
 this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
 this is the content for my article. this is the content for my article
-</p> 
-
-<p>
- this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my article
-</p> 
-
-<p>
- this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my article
-</p> 
-
-<p>
- this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
-this is the content for my article. this is the content for my article
-</p> 
+</p>   
 `},
 'article_two': {title:  'Article two| kartik rao',
 	heading: 'Article two',
@@ -87,7 +69,7 @@ return htmlTemplate;
 }
 
 app.get('/:articleName',function(req,res){
-	 res.send(createtemplate(articles[articleName]));
+	 res.send(createTemplate(articles[articleName]));
 });
 var articleName= req.params.articleName;
 
