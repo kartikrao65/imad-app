@@ -5,12 +5,43 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne ={ 
+    title:'article_one',
+    content:
+    `<ol>
+<li> 1st year 76%</li>
+<li>2nd year 72%</li> 
+<li>3d year 66%</li>
+</ol>`
+};
+
+function createtemplate(data){
+    var title= data.title;
+    var content= data.content;
+
+ var htmltemplate=
+`<html>
+ ${title};
+<body>
+    <div>
+        <a href='/'>Home</a>
+    </div>
+<h1 align="center"> Personal Information</h1>
+<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
+${content};
+</body>
+</html>`
+
+;return htmltemplate;}
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article_one', function (req,res) {
-res.sendFile(path.join(__dirname, 'ui', 'article_one.html'));
+res.sendFile(createtemplate(articleOne));
     
 });
 
