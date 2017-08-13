@@ -5,34 +5,59 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={ 
-    title:'article_one',
-    content:
-    `<ol>
-<li> 1st year 76%</li>
-<li>2nd year 72%</li> 
-<li>3d year 66%</li>
-</ol>`
-};
-
-function createtemplate(data){
-    var title= data.title;
-    var content= data.content;
-
- var htmltemplate=
-`<html>
- ${title};
+var articles = {
+    
+ article_one: { `<html>
+    <title>article_one</title>
 <body>
     <div>
         <a href='/'>Home</a>
     </div>
 <h1 align="center"> Personal Information</h1>
 <h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
-${content};
+<ol>
+<li> 1st year 76%</li>
+<li>2nd year 72%</li> 
+<li>3d year 66%</li>
+</ol>
 </body>
-</html>`
+</html>
+    
 
-;return htmltemplate;}
+};
+ 
+  article_two: {
+     <html>
+<title>Chemical Engineering</title>
+<body>
+    <meta name="viewport" content="width=device-width, initial scale=1"/>
+     <link href="/ui/style.css" rel="stylesheet" />
+     
+    <div class="container">
+    <div>
+        <a href="/">Freak</a>
+        <a href="/ui/madi.png">Logo</a>
+    </div>
+<h1 align="center"> Chemical Engineering Subjects</h1>
+
+<ul>
+<li>CPC</li>
+<li>HT</li>
+<li>MTO</li>
+<li>CET</li>
+<li>MUO</li>
+<h1>Chem engg life got hecked up</h1>
+</ul>
+</div>
+</body>
+</html>
+ }
+
+ };
+ 
+
+
+
 
 
 
@@ -40,18 +65,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article_one', function (req,res) {
-res.sendFile(createtemplate(articleOne));
+app.get('/articleName', function (req,res) {
+res.sendFile(createtemplate[articles[articleName]));
     
 });
 
- app.get('/article_two',  function (req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article_two.html'));
-});
-
- app.get('/article_three',  function (req,res) {
-    res.send('article three will be requested and will be served sir');
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
