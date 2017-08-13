@@ -51,7 +51,7 @@ this is the content for my article. this is the content for my article
 },
 };
 
-function createtemplate(data) {
+function createTemplate(data) {
 var title = data.title;
 var heading= data.heading;
 var date=data.date;
@@ -83,7 +83,7 @@ ${date}
 </div>
 </body>
 </html>`;
-return htmltemplate;
+return htmlTemplate;
 }
 
 app.get('/:articleName',function(req,res){
