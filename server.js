@@ -6,80 +6,97 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    
- article_one: { `<html>
-    <title>article_one</title>
-<body>
-    <div>
-        <a href='/'>Home</a>
-    </div>
-<h1 align="center"> Personal Information</h1>
-<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
-<ol>
-<li> 1st year 76%</li>
-<li>2nd year 72%</li> 
-<li>3d year 66%</li>
-</ol>
-</body>
-</html>
-    
+article_one :{ 
+	title:  'Article one | kartik Rao' ,
+	heading: 'Article one',
+	date: 'Aug 13, 2017' ,
+	content: `<p>
+ this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my article
+</p> 
 
+<p>
+ this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my article
+</p> 
+
+<p>
+ this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my article
+</p> 
+
+<p>
+ this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my articlethis is the content for my article. this is the content for my article
+this is the content for my article. this is the content for my article
+</p> 
+`},
+article_two: {title:  'Article two| kartik rao',
+	heading: 'Article two'
+	date: 'Aug 3, 2017' ,
+	content: `<p>
+ this is the content for my second article
+ </p>
+},
+
+article_three: {
+	title:  'Article three | kartik rao
+	heading: 'Article three'
+	date: 'Aug 23, 2017',
+	content: `<p>
+ this is the content for my third article
+ </p>},
+},
 };
- 
-  article_two: {
-     <html>
-    <title>article_one</title>
-<body>
-    <div>
-        <a href='/'>Home</a>
-    </div>
-<h1 align="center"> Personal Information</h1>
-<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
-<ol>
-<li> 1st year 76%</li>
-<li>2nd year 72%</li> 
-<li>3d year 66%</li>
-</ol>
+
+function createtemplate(data) {
+var title = data.title;
+var date=data.date;
+var heading= data.heading;
+var content= data.content;
+
+var htmltemplate = 
+ `<html>
+ <head>
+   <title>
+      ${title}
+	   </title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <link href="/ui/style.css" rel="stylesheet" />
+   </head>
+       <body>
+	   <div class='container'>
+	        <div>
+			     <a href="/">Home</a>
+			</div>
+            <hr/>
+<h3>
+${heading}</h3>
+<div> 
+${date}
+</div>
+<div>
+ ${content}
+</div>
+</div>
 </body>
-</html>
- }
+</html>`;
+return htmltemplate;
+}
 
- };
- 
+app.get('/:articleName',function(req,res){
+	 res.send(createtemplate(articles[articleName]));
+});
+var articleName= req.params.articleName;
 
-function createtemplate(data){
-    var title= data.title;
-    var content= data.content;
-
- var htmltemplate=
-`<html>
- ${title};
-<body>
-    <div>
-      <a href='/'>Home</a>
-    </div>
-<h1 align="center"> Personal Information</h1>
-<h1 align="center"> My name is Kartik Rao. I am pursuing chemical engineering <br />  @ <br /> Anurag Group Of insitutions</h1>
-${content};
-</body>
-</html>`
-
-;return htmltemplate;}
-
-
-
-
-
+	
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
-app.get('/articleName', function (req,res) {
-res.sendFile(createtemplate[articles[articleName]));
-    
-});
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
