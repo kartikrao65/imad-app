@@ -17,7 +17,7 @@ var articles= {
     
 },
  articleTwo: {
-    title: 'Article one|kartik rao',
+    title: 'Article two|kartik rao',
      heading: 'article one',
      date: 'aug 9, 2017',
      content:
@@ -26,7 +26,7 @@ var articles= {
                </p>`,
     },
  articleThree: {
-    title: 'Article one|kartik rao',
+    title: 'Article three|kartik rao',
      heading: 'article one',
      date: 'aug 8, 2018',
      content:
@@ -77,7 +77,7 @@ function createTemplate (data)
 return htmlTemplate;
 }
 
-app.get('/:articleName', function(req,res){
+app.get('/:articleName', function(req, res){
 var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
