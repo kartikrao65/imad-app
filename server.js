@@ -16,7 +16,7 @@ var articles= {
                </p>`,
     
 },
-articleTwo: {
+ articleTwo: {
     title: 'Article one|kartik rao',
      heading: 'article one',
      date: 'aug 9, 2017',
@@ -25,7 +25,7 @@ articleTwo: {
                    Article two content
                </p>`,
     },
-articleThree: {
+ articleThree: {
     title: 'Article one|kartik rao',
      heading: 'article one',
      date: 'aug 8, 2018',
@@ -76,17 +76,21 @@ function createTemplate (data)
 ;
 return htmlTemplate;
 }
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
-});
 
-app.get('/article-two',function(req,res){
+app.get('/:articleName', function(req,res){
+    res.send(createTemplate(articles[articleName]));
+});
+//app.get('/article-one',function(req,res){
+  //  res.send(createTemplate(articleOne));
+//});
+
+/*app.get('/article-two',function(req,res){
 res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three',function(req,res){
 res.send(createTemplate(articleThree));
-});
+});*/
 
 
 app.get('/', function (req, res) {
