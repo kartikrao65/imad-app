@@ -9,7 +9,7 @@ var articles= {
  article-one: {
      title: 'Article one|kartik rao',
      heading: 'article one',
-     date: 'Aug 10, 2017',
+     date: 'aug 9, 2017',
      content:
      ` <p>
                    New article,New article,New article,New article,New article,New article,New article,New article,New article,New articl e,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article
@@ -78,9 +78,9 @@ function createTemplate (data)
 return htmlTemplate;
 }
 
-app.get('/:articleName', function(req, res){
-var articleName = req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
+app.get('/:article-Name', function(req, res){
+var article-Name = req.params.article-Name;
+    res.send(createTemplate(articles[article-Name]));
 });
 
 //app.get('/article-one',function(req,res){
