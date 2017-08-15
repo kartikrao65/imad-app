@@ -18,7 +18,7 @@ var articles= {
 },
  articleTwo: {
     title: 'Article two|kartik rao',
-     heading: 'article one',
+     heading: 'article two',
      date: 'aug 9, 2017',
      content:
      ` <p>
@@ -27,7 +27,7 @@ var articles= {
     },
  articleThree: {
     title: 'Article three|kartik rao',
-     heading: 'article one',
+     heading: 'article three',
      date: 'aug 8, 2018',
      content:
      ` <p>
