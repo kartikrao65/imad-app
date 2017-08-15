@@ -25,7 +25,8 @@ articleTwo: {
                    Article two content.Xoxoxoxoxoxox
                </p>`,
     },
-articleThree: {title: 'Article one|kartik rao',
+articleThree: {
+    title: 'Article one|kartik rao',
      heading: 'article one',
      date: 'aug 8, 2018',
      content:
