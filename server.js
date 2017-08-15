@@ -5,15 +5,34 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article one|kartik rao',
-    heading: 'article one',
-    date: 'April 8, 1998',
-    content:
-    `<p>
-                  New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article
-              </p>`,
+var articles= {
+ articleOne: {
+     title: 'Article one|kartik rao',
+     heading: 'article one',
+     date: 'Aug 10, 2017',
+     content:
+     ` <p>
+                   New article,New article,New article,New article,New article,New article,New article,New article,New article,New articl e,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article,New article
+               </p>`,
     
+},
+articleTwo: {
+    title: 'Article one|kartik rao',
+     heading: 'article one',
+     date: 'aug 9, 2017',
+     content:
+     ` <p>
+                   Article two content.Xoxoxoxoxoxox
+               </p>`,
+    },
+articleThree: {title: 'Article one|kartik rao',
+     heading: 'article one',
+     date: 'aug 8, 2018',
+     content:
+     ` <p>
+                   This is my third article. Zozozozozozozo
+               </p>`,
+    }
 };
 
 function createTemplate (data)
@@ -61,11 +80,11 @@ app.get('/article-one',function(req,res){
 });
 
 app.get('/article-two',function(req,res){
-res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+res.send(createTemplate(articleThree));
 });
 
 
