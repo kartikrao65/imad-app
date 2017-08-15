@@ -23,6 +23,10 @@ button.onclick= function() {
     counter = counter + 1;
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readystate === XMLHttpRequest.Done)
+    }
 };
 
         </script>
