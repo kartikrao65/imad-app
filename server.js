@@ -22,7 +22,7 @@ articleTwo: {
      date: 'aug 9, 2017',
      content:
      ` <p>
-                   Article two content.Xoxoxoxoxoxox
+                   Article two content
                </p>`,
     },
 articleThree: {
@@ -31,7 +31,7 @@ articleThree: {
      date: 'aug 8, 2018',
      content:
      ` <p>
-                   This is my third article. Zozozozozozozo
+                   This is my third article.
                </p>`,
     }
 };
